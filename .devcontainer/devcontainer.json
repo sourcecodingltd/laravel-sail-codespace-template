@@ -42,7 +42,6 @@
             "settings": {}
         }
     },
-    "postCreateCommand": "sudo curl -o /usr/local/bin/docker-compose -fsSL https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-linux-$(uname -m)",
     "postStartCommand": "cp .env.example .env && composer install --ignore-platform-reqs && ./vendor/bin/sail up -d && ./vendor/bin/sail php artisan key:generate && ./vendor/bin/sail php artisan storage:link && sed -i 's#DB_HOST=127.0.0.1#DB_HOST=mysql#' .env && ./vendor/bin/sail php artisan migrate",
     "forwardPorts": [
         3306,
