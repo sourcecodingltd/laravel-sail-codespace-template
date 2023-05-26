@@ -1,3 +1,7 @@
+## Laravel Sail Codespace Template
+
+Fork this repo and start a github codespace to get a rough and ready out of the box laravel running, all the commands to get it up and running happen post start, this can take time depending on VM selected ..... enjoy :) 
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
