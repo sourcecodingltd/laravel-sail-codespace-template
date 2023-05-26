@@ -1,0 +1,51 @@
+{
+    "name": "Laravel Sail",
+    "service": "laravel.test",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "formulahendry.auto-complete-tag",
+                "alefragnani.bookmarks",
+                "predrag-nikolic.php-class-helper",
+                "ikappas.composer",
+                "dbaeumer.vscode-eslint",
+                "eamodio.gitlens",
+                "nhoizey.gremlins",
+                "heybourn.headwind",
+                "ecmel.vscode-html-css",
+                "zignd.html-css-class-completion",
+                "oderwat.indent-rainbow",
+                "onecentlin.laravel-extension-pack",
+                "austenc.laravel-docs",
+                "absszero.vscode-laravel-goto",
+                "georgykurian.laravel-ide-helper",
+                "ahinkle.laravel-model-snippets",
+                "open-southeners.laravel-pint",
+                "xabikos.javascriptsnippets",
+                "jakebathman.mysql-syntax",
+                "christian-kohler.npm-intellisense",
+                "xdebug.php-pack",
+                "neilbrayfield.php-docblocker",
+                "bmewburn.vscode-intelephense-client",
+                "mehedidracula.php-namespace-resolver",
+                "bradlc.vscode-tailwindcss",
+                "alfredbirk.tailwind-documentation",
+                "stivo.tailwind-fold",
+                "pflannery.vscode-versionlens",
+                "octref.vetur",
+                "vue.volar",
+                "hollowtree.vue-snippets",
+                "redhat.vscode-yaml",
+                "gamunu.vscode-yarn",
+                "cweijan.vscode-mysql-client2"
+            ],
+            "settings": {}
+        }
+    },
+    "postCreateCommand": "sudo curl -o /usr/local/bin/docker-compose -fsSL https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-linux-$(uname -m)",
+    "postStartCommand": "cp .env.example .env && composer install --ignore-platform-reqs && ./vendor/bin/sail up -d && ./vendor/bin/sail php artisan key:generate && ./vendor/bin/sail php artisan storage:link && sed -i 's#DB_HOST=127.0.0.1#DB_HOST=mysql#' .env && ./vendor/bin/sail php artisan migrate",
+    "forwardPorts": [
+        3306,
+        5173
+    ]
+}
